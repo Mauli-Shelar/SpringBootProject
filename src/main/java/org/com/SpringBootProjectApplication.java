@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootApplication
 public class SpringBootProjectApplication implements CommandLineRunner {
 	
-	Logger logger = LogManager.getLogger(SpringBootProjectApplication.class);
+	static Logger logger = LogManager.getLogger(SpringBootProjectApplication.class);
 
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;

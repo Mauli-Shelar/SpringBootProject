@@ -10,12 +10,11 @@ import org.com.constant.GlobalConstant;
 import org.com.exceptionHandler.exception.UserAlreadyPresent;
 import org.com.model.LoginUser;
 import org.com.repo.LoginUserRepo;
+import org.com.requestModel.UserRequestModel;
+import org.com.responseModel.ResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import requestModel.UserRequestModel;
-import responseModel.ResponseModel;
 
 @Service
 public class LoginUserService {

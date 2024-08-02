@@ -2,6 +2,8 @@ package org.com.controller;
 
 import org.com.config.JwtUtil;
 import org.com.model.LoginUserDetail;
+import org.com.requestModel.JWTRequest;
+import org.com.responseModel.JwtResponse;
 import org.com.service.LoginUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,9 +14,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import requestModel.JWTRequest;
-import responseModel.JwtResponse;
 
 @RestController
 public class TokenController {

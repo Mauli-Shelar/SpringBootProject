@@ -1,4 +1,4 @@
-package requestModel;
+package org.com.requestModel;
 
 public class JWTRequest {
 

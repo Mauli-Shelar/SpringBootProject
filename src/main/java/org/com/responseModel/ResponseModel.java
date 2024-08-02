@@ -1,4 +1,4 @@
-package responseModel;
+package org.com.responseModel;
 
 public class ResponseModel {
 

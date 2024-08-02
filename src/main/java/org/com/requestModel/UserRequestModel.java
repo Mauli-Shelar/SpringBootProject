@@ -1,4 +1,4 @@
-package requestModel;
+package org.com.requestModel;
 
 import lombok.NonNull;
 
