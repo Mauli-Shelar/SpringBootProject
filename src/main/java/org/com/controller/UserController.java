@@ -2,9 +2,9 @@ package org.com.controller;
 
 import java.util.List;
 
+import org.com.exceptionHandler.exception.AddAllAttributeForUserCreation;
+import org.com.exceptionHandler.exception.UserAlreadyPresent;
 import org.com.service.LoginUserService;
-import org.com.service.exception.AddAllAttributeForUserCreation;
-import org.com.service.exception.UserAlreadyPresent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,8 +1,8 @@
-package org.com;
+package org.com.exceptionHandler;
 
-import org.com.service.exception.AddAllAttributeForUserCreation;
-import org.com.service.exception.InvalidToken;
-import org.com.service.exception.UserAlreadyPresent;
+import org.com.exceptionHandler.exception.AddAllAttributeForUserCreation;
+import org.com.exceptionHandler.exception.InvalidToken;
+import org.com.exceptionHandler.exception.UserAlreadyPresent;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;

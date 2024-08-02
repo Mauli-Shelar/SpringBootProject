@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.com.config.JwtUtil;
+import org.com.exceptionHandler.exception.InvalidToken;
 import org.com.model.LoginUserDetail;
 import org.com.service.LoginUserDetailService;
-import org.com.service.exception.InvalidToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

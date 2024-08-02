@@ -1,4 +1,4 @@
-package org.com.service.exception;
+package org.com.exceptionHandler.exception;
 
 public class AddAllAttributeForUserCreation extends RuntimeException {
 
