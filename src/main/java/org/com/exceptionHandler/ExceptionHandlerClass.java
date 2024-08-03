@@ -1,6 +1,7 @@
 package org.com.exceptionHandler;
 
 import org.com.exceptionHandler.exception.AddAllAttributeForUserCreation;
+import org.com.exceptionHandler.exception.FlatNotAvailable;
 import org.com.exceptionHandler.exception.InvalidToken;
 import org.com.exceptionHandler.exception.UserAlreadyPresent;
 import org.springframework.http.HttpStatus;
@@ -41,5 +42,12 @@ public class ExceptionHandlerClass {
 	public ResponseEntity<String> handleInvalidToken(InvalidToken invalidToken)
 	{
 		return new ResponseEntity<String>(invalidToken.getMessage(),HttpStatus.UNAUTHORIZED);
+	}
+	
+	@ExceptionHandler(FlatNotAvailable.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public ResponseEntity<String> handleFlatNotAvailable(FlatNotAvailable flatNotAvailable)
+	{
+		return new ResponseEntity<String>(flatNotAvailable.getMessage(),HttpStatus.NOT_FOUND);
 	}
 }
