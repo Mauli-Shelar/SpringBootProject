@@ -21,41 +21,37 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import antlr.Token;
 
-
 @Configuration
-public class FilterClass extends OncePerRequestFilter{
-	
+public class FilterClass extends OncePerRequestFilter {
+
 	@Autowired
 	JwtUtil jwtUtil;
-	
+
 	@Autowired
 	LoginUserDetailService loginUserDetailService;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		String authString=request.getHeader("Authorization");
-		String token=null;
-		String userName=null;
-		System.out.println("Token ......."+authString);
-		if(null!=authString && authString.startsWith("Bearer"))
-		{
-		token=authString.substring(7);
-		userName=jwtUtil.extractUsername(token);
-		LoginUserDetail userDetail=(LoginUserDetail) loginUserDetailService.loadUserByUsername(userName);
-		if(null!=userName && SecurityContextHolder.getContext().getAuthentication()==null)
-		{
-			UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken=new UsernamePasswordAuthenticationToken(userDetail,null,userDetail.getAuthorities());
-			usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetails(request));
-			SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-		}
-		}
-		else
-		{
-			throw new InvalidToken("Please add valid token....");
+		String authString = request.getHeader("Authorization");
+		String token = null;
+		String userName = null;
+		System.out.println("Token ......." + authString);
+		if (null != authString && authString.startsWith("Bearer ")) {
+			token = authString.substring(7);
+			userName = jwtUtil.extractUsername(token);
+			LoginUserDetail userDetail = (LoginUserDetail) loginUserDetailService.loadUserByUsername(userName);
+			if (null != userName && SecurityContextHolder.getContext().getAuthentication() == null) {
+				UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+						userDetail, null, userDetail.getAuthorities());
+				usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetails(request));
+				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+			}
+		} else {
+		//	throw new InvalidToken("Please add valid token....");
 		}
 		filterChain.doFilter(request, response);
-		
+
 	}
 
 }
